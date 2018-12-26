@@ -1,0 +1,124 @@
+[21.12.2017, 23:30:36] using /home/andre/.alexa/config.json
+[21.12.2017, 23:30:36] ---
+[21.12.2017, 23:30:36] this is alexa-fhem 0.4.1
+[21.12.2017, 23:30:36] Fetching FHEM devices...
+[21.12.2017, 23:30:36] [FHEM Test4] starting longpoll: http://10.0.1.140:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=null;fmt=JSON&timestamp=1513895436910
+[21.12.2017, 23:30:36] Server listening on: https://:::3000
+[21.12.2017, 23:30:36] [FHEM Test4] Checking devices and attributes...
+[21.12.2017, 23:30:36] [FHEM Test4]   executing: http://10.0.1.140:8083/fhem?cmd=%7BAttrVal(%22global%22,%22userattr%22,%22%22)%7D&fwcsrf=csrf_575722512863072&XHR=1
+[21.12.2017, 23:30:36] [FHEM Test4]   executing: http://10.0.1.140:8083/fhem?cmd=jsonlist2%20TYPE=alexa&fwcsrf=csrf_575722512863072&XHR=1
+[21.12.2017, 23:30:36] [FHEM Test4] Fetching FHEM devices...
+[21.12.2017, 23:30:36] [FHEM Test4] fetching: http://10.0.1.140:8083/fhem?cmd=jsonlist2%20NAME=switch4%7CLautsprecher_Kueche%7Ctemp%7Cthermostat&fwcsrf=csrf_575722512863072&XHR=1
+[21.12.2017, 23:30:37] [FHEM Test4] alexa device is alexa
+[21.12.2017, 23:30:37] [FHEM Test4] mappings for alexa: {}
+[21.12.2017, 23:30:37] [FHEM Test4] alexa is switch
+[21.12.2017, 23:30:37] [FHEM Test4] alexa has
+[21.12.2017, 23:30:37] [FHEM Test4] homebridgeMapping: On:verb=schalte,valueOn=an;ein,valueOff=aus,valueToggle=um
+
+Brightness:verb=stelle,property=;helligkeit,valuePrefix=auf,values=AMAZON.NUMBER,valueSuffix=prozent
+
+Hue:verb=stelle,valuePrefix=auf,values=rot:0;grün:128;blau:200
+Hue:verb=färbe,values=rot:0;grün:120;blau:220
+
+Saturation=verb=stelle,property=sättigung,valuePrefix=auf,values=AMAZON.NUMBER
+Saturation=verb=sättige,values=AMAZON.NUMBER
+
+TargetPosition:verb=mach,articles=den;die,values=auf:100;zu:0
+TargetPosition:verb=stelle,valuePrefix=auf,values=AMAZON.NUMBER,valueSuffix=prozent
+
+TargetTemperature:verb=stelle,valuePrefix=auf,values=AMAZON.NUMBER,valueSuffix=grad
+
+Weckzeit:verb=stelle,valuePrefix=auf,values=AMAZON.TIME,valueSuffix=uhr
+
+Volume:verb=stelle,valuePrefix=auf,values=AMAZON.NUMBER,valueSuffix=prozent
+
+Sender:verb=schalte,valuePrefix=auf,values=a.+r.+d.:ard;z.+d.+f.:zdf;s.+w.+r.+drei:swr3;hessen
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'AMAZON.NUMBER': 'AMAZON.NUMBER' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { rot: '0', 'grün': '128', blau: '200' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { rot: '0', 'grün': '120', blau: '220' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'AMAZON.NUMBER': 'AMAZON.NUMBER' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'AMAZON.NUMBER': 'AMAZON.NUMBER' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { auf: '100', zu: '0' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'AMAZON.NUMBER': 'AMAZON.NUMBER' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'AMAZON.NUMBER': 'AMAZON.NUMBER' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'AMAZON.TIME': 'AMAZON.TIME' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'AMAZON.NUMBER': 'AMAZON.NUMBER' }
+[21.12.2017, 23:30:37] [FHEM Test4] value2homekit: { 'a. r. d.': 'ard',
+  'z. d. f.': 'zdf',
+  's. w. r. drei': 'swr3',
+  hessen: 'hessen' }
+[21.12.2017, 23:30:37] [FHEM Test4]   executing: http://10.0.1.140:8083/fhem?cmd=%7B$defs%7Balexa%7D-%3E%7B%22active%22%7D%20=%201;;undef%7D;%7B$defs%7Balexa%7D-%3E%7B%22alexa-fhem%20version%22%7D%20=%20%220.4.1%22%7D;%7B$defs%7Balexa%7D-%3E%7B%22active%22%7D%20=%200;;undef%7D&fwcsrf=csrf_575722512863072&XHR=1
+[21.12.2017, 23:30:37] [FHEM Test4]   executing: http://10.0.1.140:8083/fhem?cmd=%7B$defs%7Balexa%7D-%3E%7B%22active%22%7D%20=%201;;undef%7D;list%20alexa%20.alexaAuthorization;%7B$defs%7Balexa%7D-%3E%7B%22active%22%7D%20=%200;;undef%7D&fwcsrf=csrf_575722512863072&XHR=1
+[21.12.2017, 23:30:37] [FHEM Test4] got: 4 results
+[21.12.2017, 23:30:37] [FHEM Test4] homebridgeMapping: Volume=volume,cmd=volume,max=30,maxValue=100
+[21.12.2017, 23:30:37] [FHEM Test4] mappings for Lautsprecher_Kueche: { '00001001-0000-1000-8000-135D67EC4377': 
+   { reading: 'volume',
+     cmd: 'volume',
+     delay: true,
+     name: 'Volume',
+     format: 'UINT8',
+     unit: 'PERCENTAGE',
+     minValue: 0,
+     maxValue: 100,
+     minStep: 1 },
+  On: 
+   { reading: 'state',
+     valueOff: '/off|A0|000000/',
+     cmdOn: 'on',
+     cmdOff: 'off' },
+  Volume: { reading: 'volume', cmd: 'volume', max: 30, maxValue: 100 } }
+[21.12.2017, 23:30:37] [FHEM Test4] Lautsprecher_Kueche is Speaker
+[21.12.2017, 23:30:37] [FHEM Test4] Lautsprecher_Kueche has
+[21.12.2017, 23:30:37] [FHEM Test4]   Custom Volume [volume;cached]
+[21.12.2017, 23:30:37] [FHEM Test4]   On [state;on,off]
+[21.12.2017, 23:30:37] [FHEM Test4]   Volume [volume]
+  2017-12-21 23:30:37 caching: Lautsprecher_Kueche-volume: 50
+[21.12.2017, 23:30:37] [FHEM Test4]     caching: Custom Volume: 50 (as number; from '50')
+  2017-12-21 23:30:37 caching: Lautsprecher_Kueche-state: off
+[21.12.2017, 23:30:37] [FHEM Test4] homebridgeMapping: On=state
+[21.12.2017, 23:30:37] [FHEM Test4] mappings for switch4: { On: { reading: 'state', valueOff: '0', cmdOn: 'on', cmdOff: 'off' },
+  Brightness: { reading: 'pct', cmd: 'pct', delay: true },
+  Hue: { reading: 'hue', cmd: 'hue', max: '359', maxValue: 359 },
+  'A18E5901-CFA1-4D37-A10F-0071CEEEEEBD': 
+   { reading: 'color',
+     cmd: 'color',
+     delay: true,
+     name: 'Color Temperature',
+     format: 'UINT16',
+     minValue: 2000,
+     maxValue: 6500,
+     minStep: 10 } }
+[21.12.2017, 23:30:37] [FHEM Test4] switch4 is light
+[21.12.2017, 23:30:37] [FHEM Test4] switch4 has
+[21.12.2017, 23:30:37] [FHEM Test4]   On [state;on,off]
+[21.12.2017, 23:30:37] [FHEM Test4]   Brightness [pct]
+[21.12.2017, 23:30:37] [FHEM Test4]   Hue [hue;hue;0-359]
+[21.12.2017, 23:30:37] [FHEM Test4]   Custom Color Temperature [color]
+  2017-12-21 23:30:37 caching: switch4-state: off
+  2017-12-21 23:30:37 caching: switch4-pct: 55
+  2017-12-21 23:30:37 caching: switch4-hue: 240
+  2017-12-21 23:30:37 caching: switch4-color: 2700
+[21.12.2017, 23:30:37] [FHEM Test4]     caching: Custom Color Temperature: 2700 (as number; from '2700')
+[21.12.2017, 23:30:37] [FHEM Test4] mappings for temp: { CurrentTemperature: { reading: 'temperature', minValue: -30 } }
+[21.12.2017, 23:30:37] [FHEM Test4] temp is thermometer
+[21.12.2017, 23:30:37] [FHEM Test4] temp has
+[21.12.2017, 23:30:37] [FHEM Test4]   CurrentTemperature [temperature]
+  2017-12-21 23:30:37 caching: temp-temperature: 22.2
+[21.12.2017, 23:30:37] [FHEM Test4] homebridgeMapping: TargetTemperature=target,cmd=target,minValue=-5,maxValue=5,minStep=2 CurrentTemperature=temperature
+[21.12.2017, 23:30:37] [FHEM Test4] mappings for thermostat: { CurrentTemperature: { reading: 'temperature', minValue: -30 },
+  CurrentHeatingCoolingState: { default: 'HEAT' },
+  TargetTemperature: 
+   { reading: 'target',
+     cmd: 'target',
+     minValue: -5,
+     maxValue: 5,
+     minStep: 2 } }
+[21.12.2017, 23:30:37] [FHEM Test4] thermostat is thermostat
+[21.12.2017, 23:30:37] [FHEM Test4] thermostat has
+[21.12.2017, 23:30:37] [FHEM Test4]   CurrentTemperature [temperature]
+[21.12.2017, 23:30:37] [FHEM Test4]   CurrentHeatingCoolingState [undefined]
+[21.12.2017, 23:30:37] [FHEM Test4]   TargetTemperature [target]
+  2017-12-21 23:30:37 caching: thermostat-temperature: 12.2
+[21.12.2017, 23:30:37] [FHEM Test4] default: HEAT
+  2017-12-21 23:30:37 caching: thermostat-target: 3.5
+[21.12.2017, 23:30:38] Got SIGINT, shutting down alexa-fhem...
