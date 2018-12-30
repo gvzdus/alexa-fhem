@@ -1,86 +1,37 @@
 
-1. alexa-fhem installieren
-  alexa-fhem-0.0.0.tgz auspacken
-  package in alexa-fhem umbenennen
-  cd alexa-fhem
-  npm install
-  ssl zertifikat mit ./createKey.sh erzeugen.
-    -> password mindestens 4 stellen, alle fregen beantworten
-  <home>/.alexa/config.json anpassen (siehe config-sample.json)
-    client id -> (aus 3.1)
-  bin/alexa starten
+Voraussetzungen:
+ - Posix/Linux-System (getestet auf jessie-Raspbian)
+ - nodejs, getestet auf 8.15.0
+ - FHEM-Config bitte sichern, wird bei der Installation veraendert
+ - Alexa-FHEM muss unter dem gleichen Nutzer wie FHEM laufen
 
-2. port 3000 von aussen erreichbar machen
+1. alexa-fhem installieren, vorzugsweise unterhalb des Homedir von
+  FHEM (/opt/fhem ?), z.B. durch "git clone https://github.com/gvzdus/alexa-fhem"
 
-3. alexa smart home skill anlegen
-  amazon developer account anlegen
-  bei developer.amazon.com anmelden
-  3.1 apps&services
-    security profiles
-      create a new security profile
-      [save]
-    login with amazon
-      profil von eben auswählen
-      consent url -> https://www.amazon.com/gp/help/customer/display.html?nodeId=468496
-    security profiles
-      web settings
-        allowed return urls -> https://layla.amazon.co.uk/api/skill/link/<xxx>
-                               https://pitangui.amazon.com/api/skill/link/<xxx>
-                               https://layla.amazon.com/api/skill/link/<xxx>
-          <xxx> aus 3.2 configuration -> account linking -> redirect urls
+2. ALS FHEM-User bin/alexa -A aufrufen, also z.B.:
+  sudo -u fhem /opt/fhem/bin/alexa -A
 
-  3.2 alexa
-    alexa skills kit get started
-    add a new skill
-      skill information
-        type -> smart home skill api
-        language -> german
-        [next]
-        [next]
-      configuration
-        europe -> arn:aws:lambda... (aus 4.)
-        authorization url -> https://www.amazon.com/ap/oa
-        client id -> (aus 3.1)
-        scope -> profile:user_id
-        access token uri -> https://api.amazon.com/auth/o2/token
-        client secret -> (aus 3.1)
-        privacy policy url -> https://www.amazon.com/gp/help/customer/display.html?nodeId=468496
-        [next]
-      test
-        show this skill in the alexa app -> yes
-        [save]
+3. Durch die Fragen mit Return durchklackern, aber bitte lesen
 
-4. aws lambda funktion anlegen
-  aws.amazon.com account anlegen
-  an der aws konsole anmelden
-  lambda auswählen
-  rechts oben -> eu (ireland)
-  create lambda function
-    select blueprint
-      filter -> alexa -> 'alexa-smart-home-skill-adapter'
-    configure triggers
-      aplication id -> amzn1.ask.skil... (aus 3.2 Skill Information)
-      enable trigger -> ja
-      [next]
-    configure function
-      name -> FHEM
-      runtime -> Node.js 4.3
-      edit code inline -> lambda.js einfügen, hostname (mein.host.name) anpassen -> save
-      role -> Existing role
-      existing role-> service-role/myRoleName
-      [next]
-      [create function]
+4. Ein paar Devices, die gesteuert werden sollen, ein Attribut
+  "alexaName" zuweisen, das ist der Name, auf den der Echo
+   reagiert.
 
-5. http://alexa.amazon.de
-   -> skils -> meine skils (rechts oben) -> fhem skill hinzufügen -> mit eigenem amazon konto anmelden
+5. In FHEM im Web das ggf. neu angelegte Device MyAlexa oeffnen
+   und auf "Start" klicken
 
-   “alexa, finde meine smarten geräte“
-     oder
-   -> smart home -> geräte suchen
+6. Waehrend der beta-Testphase: Bei gvz-fhem@garnix.de nach einer
+  Einladung zum Testen fragen, hierbei bitte pruefen, ob die bei
+  Amazon verwendete Email-Adresse mit der eigenen Absenderadresse
+  identisch ist, sonst wird das nichts.
 
-   optional: gruppen (räume) anlegen
+7. Am besten im Web unter "alexa.amazon.com" anmelden und den
+   Skill "FHEMlazy" hinzufuegen. 
 
-6. “alexa, schalte <gerät> ein”
-   “alexa, schalte <gerät> aus”
-   “alexa, stelle <gerät> auf <wert> prozent”
-   “alexa, stelle <gerät/raum> auf <anzahl> grad”
+8. Jetzt das Secret angeben, dass unter Attribute als "skillSecret"
+   beim Alexa-Device zu finden ist
+
+9. Im Gutfall ist auf der folgenden Pruefseite alles gruen, und
+   es wurden sogar schon die Geraete mit alexaName gefunden.
+
+10. Weiter klicken, und fertig.
