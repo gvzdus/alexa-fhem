@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "alexa-fhem",
-  "version": "0.4.4",
+  "version": "0.4.5-FHEMlazy",
   "description": "a fhem skill for amazon alexa",
   "author": "justme-1968",
   "license": "ISC",
@@ -11,7 +11,8 @@
     "fhem"
   ],
   "dependencies": {
-    "chalk": "^1.1.1",
+    "winston": "^3.1",
+    "readline-sync": "^1.4.9",
     "commander": "2.8.1",
     "nat-pmp": "^1.0.0",
     "nat-upnp": "^1.0.4",
