@@ -5,13 +5,19 @@ Voraussetzungen:
  - FHEM-Config bitte sichern, wird bei der Installation veraendert
  - Alexa-FHEM muss unter dem gleichen Nutzer wie FHEM laufen
 
-1. alexa-fhem installieren, vorzugsweise unterhalb des Homedir von
-  FHEM (/opt/fhem ?), z.B. durch "git clone https://github.com/gvzdus/alexa-fhem"
+INSTALLATION
 
-2. ALS FHEM-User bin/alexa -A aufrufen, also z.B.:
-  sudo -u fhem /opt/fhem/bin/alexa -A
+Auf der Kommandozeile ALS BENUTZER VON FHEM:
+
+1. alexa-fhem installieren, vorzugsweise unterhalb des Homedir von
+   FHEM (/opt/fhem ?), z.B. durch "git clone https://github.com/gvzdus/alexa-fhem",
+   dann nach alexa-fhem wechseln und "npm install" aufrufen.
+
+2. bin/alexa -A aufrufen
 
 3. Durch die Fragen mit Return durchklackern, aber bitte lesen
+
+In der FHEM-Web-GUI:
 
 4. Ein paar Devices, die gesteuert werden sollen, ein Attribut
   "alexaName" zuweisen, das ist der Name, auf den der Echo
@@ -25,10 +31,13 @@ Voraussetzungen:
   Amazon verwendete Email-Adresse mit der eigenen Absenderadresse
   identisch ist, sonst wird das nichts.
 
+Im Web:
+
 7. Am besten im Web unter "alexa.amazon.com" anmelden und den
    Skill "FHEMlazy" hinzufuegen. 
 
-8. Jetzt das Secret angeben, dass unter Attribute als "skillSecret"
+8. Jetzt das Secret angeben, dass unter Attribute als 
+   "skillRegistrationKey"
    beim Alexa-Device zu finden ist
 
 9. Im Gutfall ist auf der folgenden Pruefseite alles gruen, und
