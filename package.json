@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "alexa-fhem",
-  "version": "0.4.5-FHEMlazy",
+  "version": "0.5.0-FHEMlazy",
   "description": "a fhem skill for amazon alexa",
   "author": "justme-1968",
   "license": "ISC",
