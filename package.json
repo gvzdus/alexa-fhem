@@ -11,11 +11,9 @@
     "fhem"
   ],
   "dependencies": {
-    "winston": "^3.1",
-    "readline-sync": "^1.4.9",
     "commander": "2.8.1",
-    "nat-pmp": "^1.0.0",
-    "nat-upnp": "^1.0.4",
-    "request": "^2.78.0"
+    "readline-sync": "^1.4.9",
+    "request": "^2.78.0",
+    "winston": "^3.1"
   }
 }
