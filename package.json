@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "alexa-fhem",
-  "version": "0.5.2p6-FHEMlazy",
+  "version": "0.5.3-FHEMlazy",
   "description": "a fhem skill for amazon alexa",
   "author": "justme-1968",
   "license": "ISC",
@@ -13,7 +13,6 @@
   "dependencies": {
     "commander": "2.8.1",
     "readline-sync": "^1.4.9",
-    "request": "^2.78.0",
-    "winston": "^3.1"
+    "request": "^2.78.0"
   }
 }
