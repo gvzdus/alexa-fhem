@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.3p1]
+### Added
+- Experimental support for thermostat modes for HM
+### Changed
+- Bugfix: No crash on simple curl http://localhost:3000
+
 ## [0.5.3]
 ### Changed
 - A ChangeLog
